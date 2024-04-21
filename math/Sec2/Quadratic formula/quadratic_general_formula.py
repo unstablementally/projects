@@ -19,7 +19,7 @@ except ValueError:
   x0 = True
 if x0 is True:
   print("There are no x-intercepts")
-elif rounded_x_1 is rounded_x_2:
+elif rounded_x_1 == rounded_x_2:
   print("The x-intercept is"+str(x_1_coords))
 else:
   print("The two x-intercepts are "+str(x_1_coords)+" and "+str(x_2_coords))
