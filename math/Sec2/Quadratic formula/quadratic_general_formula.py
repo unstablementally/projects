@@ -25,7 +25,7 @@ try:
     print("The two x-intercepts are "+str(x_1_coords)+" and "+str(x_2_coords)+" .")
 except ZeroDivisionError:
   eq_of_str_line = input("Are you trying to find y=mx+c? If yes, type yes.")
-  if eq_of_str_line == 'yes':
+  if eq_of_str_line.lower == 'yes':
     x = int(input('What is your x?'))
     y = (b*x)+c
     print("The y in the equation is "+str(y)+" .")
