@@ -16,5 +16,7 @@ def remove_min_hr():
   listed_sets = edited_durations
 remove_min_hr()
 occurence = Counter(listed_sets)
-for hour, count in occurence.items():
-  print(f"{hour} hours occurs {count} times")
+for hour, count in sorted(occurence.items()):
+  hour_word = "hour" if hour in [0,1] else "hours"
+  count_word = "time" if count == 1 else "times"
+  print(f"{hour} {hour_word} occurs {count} {count_word}")
