@@ -6,7 +6,7 @@ def remove_min_hr():
   global listed_sets
   edited_durations = []
   for duration in range(len(listed_sets)):
-    hours = listed_sets[duration][:-5]
+    hours = listed_sets[duration][:-4]
     #checks whether the resulting text is only integers for hours
     try:
       edited_durations.append(int(hours))
