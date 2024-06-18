@@ -1,6 +1,6 @@
 #this is histogram grouping based on per hour
 from collections import Counter
-set_of_duration = input("Pls input the durations to be grouped, put extra 0 for minutes, and leave every duration with a space")
+set_of_duration = input("Pls input the durations to be grouped, 2 digits for minutes, and leave every duration with a space")
 listed_sets = [duration + 'm' for duration in set_of_duration.split("m") if duration]
 #adds back the m after splitting for the func to work
 def remove_min_hr():
@@ -8,6 +8,8 @@ def remove_min_hr():
   edited_durations = []
   for duration in listed_sets:
     if duration:
+      if duration[0] == '0' and duration[1] != 'h':
+        duration = duration[1:]
       hours = duration.strip().split('h')[0]
       #splits and take only the hours
     try:
