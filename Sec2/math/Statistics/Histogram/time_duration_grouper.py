@@ -21,7 +21,7 @@ def remove_min_hr():
 remove_min_hr()
 occurence = Counter(listed_sets)
 for hour, count in sorted(occurence.items()):
-  hour_word = "hour" if hour in [1] else "hours"
+  hour_word = "hour" if hour == 1 else "hours"
   count_word = "time" if count == 1 else "times"
   #grammar
   print(f"{hour} {hour_word} occurs {count} {count_word}")
