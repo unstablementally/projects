@@ -43,15 +43,12 @@ while not game_end:
     player_1_answer = False
     while not player_1_answer:
         player_1_input = input("Pick a letter for where you want to put O: ")
-        if player_1_answer != "X" and player_1_answer != "O":
-            if player_1_input in screen_choice:
-                p1_index = screen_choice.index(player_1_input)
-                screen_choice[p1_index] = "O"
-                player_1_answer = True
-            else:
-                print("Incorrect input.")
-        else:    
-            print("You cannot use an already taken spot.")
+        if player_1_input.lower in screen_choice:
+            p1_index = screen_choice.index(player_1_input)
+            screen_choice[p1_index] = "O"
+            player_1_answer = True
+        else:
+            print("Incorrect input.")
         # Update the screen after the move
         screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
 |{screen_choice[3]}|{screen_choice[4]}|{screen_choice[5]}|
@@ -70,15 +67,12 @@ while not game_end:
     player_2_answer = False
     while not player_2_answer:
         player_2_input = input("Pick a letter for where you want to put X: ")
-        if player_2_answer != "X" and player_2_answer != "O":
-            if player_2_input in screen_choice:
-                p1_index = screen_choice.index(player_2_input)
-                screen_choice[p1_index] = "X"
-                player_2_answer = True
-            else:
-                print("Incorrect input.")
+        if player_2_input.lower in screen_choice:
+            p1_index = screen_choice.index(player_2_input)
+            screen_choice[p1_index] = "X"
+            player_2_answer = True
         else:
-            print("You cannot use an already taken spot.")
+            print("Incorrect input.")
         
         # Update the screen after the move
         screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
