@@ -43,18 +43,21 @@ while not game_end:
     player_1_answer = False
     while not player_1_answer:
         player_1_input = input("Pick a letter for where you want to put O: ")
-        if player_1_input.lower in screen_choice:
-            p1_index = screen_choice.index(player_1_input)
-            screen_choice[p1_index] = "O"
-            player_1_answer = True
+        if player_1_input != "O" and player_1_input != "X":
+            if player_1_input in screen_choice:
+                p1_index = screen_choice.index(player_1_input)
+                screen_choice[p1_index] = "O"
+                player_1_answer = True
+            else:
+                print("Incorrect input.")
         else:
-            print("Incorrect input.")
+            print("You cannot use an already used spot.")
         # Update the screen after the move
-        screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
+    screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
 |{screen_choice[3]}|{screen_choice[4]}|{screen_choice[5]}|
 |{screen_choice[6]}|{screen_choice[7]}|{screen_choice[8]}|"""
-        clear_screen()
-        print(screen)
+    clear_screen()
+    print(screen)
     
     # Check for a winner after Player 1's move
     winner = check_winner(screen_choice)
@@ -67,19 +70,21 @@ while not game_end:
     player_2_answer = False
     while not player_2_answer:
         player_2_input = input("Pick a letter for where you want to put X: ")
-        if player_2_input.lower in screen_choice:
-            p1_index = screen_choice.index(player_2_input)
-            screen_choice[p1_index] = "X"
-            player_2_answer = True
+        if player_2_input != "O" and player_2_input != "X": 
+            if player_2_input in screen_choice:
+                p1_index = screen_choice.index(player_2_input)
+                screen_choice[p1_index] = "X"
+                player_2_answer = True
+            else:
+                print("Incorrect input.")
         else:
-            print("Incorrect input.")
-        
+            print("You cannot use an already used spot.")
         # Update the screen after the move
-        screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
+    screen = f"""|{screen_choice[0]}|{screen_choice[1]}|{screen_choice[2]}|
 |{screen_choice[3]}|{screen_choice[4]}|{screen_choice[5]}|
 |{screen_choice[6]}|{screen_choice[7]}|{screen_choice[8]}|"""
-        clear_screen()
-        print(screen)
+    clear_screen()
+    print(screen)
     
     # Check for a winner after Player 2's move
     winner = check_winner(screen_choice)
